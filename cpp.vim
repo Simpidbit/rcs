@@ -17,7 +17,7 @@ unlet b:current_syntax
 syn match cppChar		"=\|>\|<\|+\|-\||\|&"
 syn match cppClassLink		"->\|\."
 syn match cppNormalType		"^[\ ]*\(struct\|enum\)*\ *\<\([a-zA-Z_][a-zA-Z_0-9]*\ [a-zA-Z]\)"me=e-1
-syn match cppMacro		"[A-Z_][A_Z_]*"
+syn match cppMacro		"[A-Z_][A-Z_]*[\(\)\[\]\ ]"me=e-1
 syn keyword cppStatement	new delete this friend using
 syn keyword cppAccess		public protected private
 syn keyword cppModifier		inline virtual explicit export
