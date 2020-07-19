@@ -112,5 +112,3 @@ set cursorcolumn
 hi cursorcolumn guibg=#1e1e1e
 hi cursor guibg=orange guifg=red gui=bold
 hi StatusLine guibg=white guifg=darkred
-
-@a :Vex<cr>:e /home/ghostworker/.rcs/NoBug<cr>vG$y:q<cr>ggi<cr><cr><esc>ggp
