@@ -47,6 +47,7 @@ inoremap <c-q> <esc>0i
 inoremap <c-o> <backspace>
 inoremap <c-f> <delete>
 inoremap <c-s> <esc>:w<cr>a
+inoremap <a-p> ->
 inoremap <c-d><c-d> <esc>dda
 inoremap <c-[> <esc>mz0i# <esc>`za
 inoremap ' ''<left>
@@ -112,5 +113,4 @@ hi cursorcolumn guibg=#1e1e1e
 hi cursor guibg=orange guifg=red gui=bold
 hi StatusLine guibg=white guifg=darkred
 
-let g:ycm_server_python_interpreter = '/usr/bin/python'
-let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+@a :Vex<cr>:e /home/ghostworker/.rcs/NoBug<cr>vG$y:q<cr>ggi<cr><cr><esc>ggp
