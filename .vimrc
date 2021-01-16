@@ -1,5 +1,50 @@
-set guioptions-=T
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+
+"=================================================================
+
 set number
+set guioptions-=T
 set fileencodings=utf-8,ucs-bom,utf-16,utf-32,gbk,big5,gb18030,latin1,gb2312
 set encoding=utf8
 set termencoding=utf8
@@ -12,17 +57,17 @@ set fileencoding=utf8
 
 set tabstop=4
 set shiftwidth=4
-au FileType python set noexpandtab
-au FileType * set noexpandtab
-au FileType cpp set expandtab
+set expandtab
+
 "space is better
 
 set noswapfile
-colorscheme yixiu
+colorscheme simpidbit
 syntax on
 inoremap jj <Esc>
 filetype indent on
-set guifont=Hack\ 11
+"set guifont=Hack\ 11
+set guifont=Monaco\ 12
 set autoindent
 set backspace=2
 set cursorline
@@ -104,11 +149,33 @@ nnoremap <c-l> :tabn<cr>
 nnoremap <c-n> :tabnew<cr>
 nnoremap <c-c> :tabo<cr>
 nnoremap <c-o> :tabc<cr>
+nnoremap <a-d> :NERDTree<cr>
+
 set statusline=%F%m%r%h%w\[POS=%l,%v][%p%%]\%{strftime(\"%d/%m/%y\ -\ %H:%M\")} 
 set laststatus=2
 set ruler
-hi CursorLine guibg=#1e1e1e
+hi CursorLine guibg=#081c47
 set cursorcolumn
-hi cursorcolumn guibg=#1e1e1e
+"hi cursorcolumn guibg=#1e1e1e
+hi cursorcolumn guibg=#011f5e
 hi cursor guibg=orange guifg=red gui=bold
 hi StatusLine guibg=white guifg=darkred
+
+call vundle#begin()
+""Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+call vundle#end()
+
+"let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_server_python_interpreter='/usr/bin/python3'
+let g:ycm_global_ycm_extra_conf='/home/ghostworker/.vim/bundle/YouCompleteMe/cpp/.ycm_extra_conf.py'
+let g:ycm_show_diagnostics_ui=0
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_filetype_whitelist = { 
+			\ "cpp":1,
+			\ "c":1,
+			\ "python":1,
+			\ }
+
+hi Pmenu guibg=#3b3b3b guifg=#43d100

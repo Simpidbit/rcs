@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/ghostworker/coding/cpp/test'
+let g:netrw_dirhist_2='/usr/share/vim/vim82/doc'
+let g:netrw_dirhist_1='/home/ghostworker/code/cpp/system_code/process'
